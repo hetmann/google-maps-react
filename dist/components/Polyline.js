@@ -139,8 +139,8 @@
       // }
 
     }, {
-      key: 'componentWillReceiveProps',
-      value: function componentWillReceiveProps(nextProps) {
+      key: 'componentWillUpdate',
+      value: function componentWillUpdate(nextProps) {
         this.renderPolyline();
       }
     }, {
