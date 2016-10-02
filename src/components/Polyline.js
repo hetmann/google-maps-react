@@ -74,7 +74,7 @@ export class Polyline extends React.Component {
   }
 
   render() {
-    return;
+    return null;
   }
 }
 

@@ -197,7 +197,7 @@
     }, {
       key: 'render',
       value: function render() {
-        return;
+        return null;
       }
     }]);
 
