@@ -1,22 +1,22 @@
 (function (global, factory) {
   if (typeof define === "function" && define.amd) {
-    define(['exports', './GoogleApiComponent', './components/Marker', './components/InfoWindow', 'react', 'react-dom', './lib/String', './lib/cancelablePromise', 'invariant'], factory);
+    define(['exports', './GoogleApiComponent', './components/Marker', './components/Polyline', './components/InfoWindow', 'react', 'react-dom', './lib/String', './lib/cancelablePromise', 'invariant'], factory);
   } else if (typeof exports !== "undefined") {
-    factory(exports, require('./GoogleApiComponent'), require('./components/Marker'), require('./components/InfoWindow'), require('react'), require('react-dom'), require('./lib/String'), require('./lib/cancelablePromise'), require('invariant'));
+    factory(exports, require('./GoogleApiComponent'), require('./components/Marker'), require('./components/Polyline'), require('./components/InfoWindow'), require('react'), require('react-dom'), require('./lib/String'), require('./lib/cancelablePromise'), require('invariant'));
   } else {
     var mod = {
       exports: {}
     };
-    factory(mod.exports, global.GoogleApiComponent, global.Marker, global.InfoWindow, global.react, global.reactDom, global.String, global.cancelablePromise, global.invariant);
+    factory(mod.exports, global.GoogleApiComponent, global.Marker, global.Polyline, global.InfoWindow, global.react, global.reactDom, global.String, global.cancelablePromise, global.invariant);
     global.index = mod.exports;
   }
-})(this, function (exports, _GoogleApiComponent, _Marker, _InfoWindow, _react, _reactDom, _String, _cancelablePromise, _invariant) {
+})(this, function (exports, _GoogleApiComponent, _Marker, _Polyline, _InfoWindow, _react, _reactDom, _String, _cancelablePromise, _invariant) {
   'use strict';
 
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.Map = exports.InfoWindow = exports.Marker = exports.GoogleApiWrapper = undefined;
+  exports.Map = exports.InfoWindow = exports.Polyline = exports.Marker = exports.GoogleApiWrapper = undefined;
   Object.defineProperty(exports, 'GoogleApiWrapper', {
     enumerable: true,
     get: function () {
@@ -27,6 +27,12 @@
     enumerable: true,
     get: function () {
       return _Marker.Marker;
+    }
+  });
+  Object.defineProperty(exports, 'Polyline', {
+    enumerable: true,
+    get: function () {
+      return _Polyline.Polyline;
     }
   });
   Object.defineProperty(exports, 'InfoWindow', {
