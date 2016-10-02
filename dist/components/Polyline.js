@@ -130,10 +130,18 @@
         this.polylinePromise = wrappedPromise();
         this.renderPolyline();
       }
+
+      // componentDidUpdate(prevProps) {
+      //   if ((this.props.map !== prevProps.map) ||
+      //     (this.props.position !== prevProps.position)) {
+      //       this.renderPolyline();
+      //   }
+      // }
+
     }, {
-      key: 'componentDidUpdate',
-      value: function componentDidUpdate(prevProps) {
-        if (this.props.map !== prevProps.map || this.props.position !== prevProps.position) {
+      key: 'componentWillReceiveProps',
+      value: function componentWillReceiveProps(nextProps) {
+        if (this.props.map !== nextProps.map || this.props.position !== nextProps.position) {
           this.renderPolyline();
         }
       }
@@ -170,7 +178,6 @@
           _this2.polyline.addListener(e, _this2.handleEvent(e));
         });
 
-        console.log('polyline this.polyline', this.polyline);
         this.polyline.setMap(map);
         this.polylinePromise.resolve(this.polyline);
       }

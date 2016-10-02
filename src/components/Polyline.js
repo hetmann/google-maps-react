@@ -23,11 +23,17 @@ export class Polyline extends React.Component {
     this.renderPolyline();
   }
 
-  componentDidUpdate(prevProps) {
-    if ((this.props.map !== prevProps.map) ||
-      (this.props.position !== prevProps.position)) {
+  // componentDidUpdate(prevProps) {
+  //   if ((this.props.map !== prevProps.map) ||
+  //     (this.props.position !== prevProps.position)) {
+  //       this.renderPolyline();
+  //   }
+  // }
+
+  componentWillReceiveProps(nextProps) {
+     if ((this.props.map !== nextProps.map) || (this.props.position !== nextProps.position)) {
         this.renderPolyline();
-    }
+    }   
   }
 
   componentWillUnmount() {
@@ -53,7 +59,6 @@ export class Polyline extends React.Component {
       this.polyline.addListener(e, this.handleEvent(e));
     });
 
-    console.log('polyline this.polyline', this.polyline);
     this.polyline.setMap(map);
     this.polylinePromise.resolve(this.polyline);
   }
