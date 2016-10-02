@@ -23,12 +23,13 @@ export class Marker extends React.Component {
     this.renderMarker();
   }
 
-  componentDidUpdate(prevProps) {
-    if ((this.props.map !== prevProps.map) ||
-      (this.props.position !== prevProps.position)) {
-        this.renderMarker();
-    }
-  }
+  // issue when marker drag => is creating a new instance / marker  
+  // componentDidUpdate(prevProps) {
+  //   if ((this.props.map !== prevProps.map) ||
+  //     (this.props.position !== prevProps.position)) {
+  //       this.renderMarker();
+  //   }
+  // }
 
   componentWillUnmount() {
     if (this.marker) {

@@ -130,13 +130,15 @@
         this.markerPromise = wrappedPromise();
         this.renderMarker();
       }
-    }, {
-      key: 'componentDidUpdate',
-      value: function componentDidUpdate(prevProps) {
-        if (this.props.map !== prevProps.map || this.props.position !== prevProps.position) {
-          this.renderMarker();
-        }
-      }
+
+      // issue when marker drag => is creating a new instance / marker  
+      // componentDidUpdate(prevProps) {
+      //   if ((this.props.map !== prevProps.map) ||
+      //     (this.props.position !== prevProps.position)) {
+      //       this.renderMarker();
+      //   }
+      // }
+
     }, {
       key: 'componentWillUnmount',
       value: function componentWillUnmount() {
