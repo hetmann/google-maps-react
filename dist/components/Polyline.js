@@ -141,9 +141,7 @@
     }, {
       key: 'componentWillReceiveProps',
       value: function componentWillReceiveProps(nextProps) {
-        if (this.props.map !== nextProps.map || this.props.position !== nextProps.position) {
-          this.renderPolyline();
-        }
+        this.renderPolyline();
       }
     }, {
       key: 'componentWillUnmount',
