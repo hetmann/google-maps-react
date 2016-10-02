@@ -31,6 +31,10 @@ export class Polyline extends React.Component {
   // }
 
   componentWillUpdate(nextProps) {
+    if (this.polyline) {
+      this.polyline.setMap(null);
+    }
+    
     this.renderPolyline(); 
   }
 
@@ -50,7 +54,6 @@ export class Polyline extends React.Component {
     }
 
     const pref = {...rest};
-    console.log('polyline pref', pref);
     this.polyline = new google.maps.Polyline(pref);
 
     evtNames.forEach(e => {

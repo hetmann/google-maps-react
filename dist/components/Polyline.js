@@ -141,6 +141,10 @@
     }, {
       key: 'componentWillUpdate',
       value: function componentWillUpdate(nextProps) {
+        if (this.polyline) {
+          this.polyline.setMap(null);
+        }
+
         this.renderPolyline();
       }
     }, {
@@ -169,7 +173,6 @@
         }
 
         var pref = _extends({}, rest);
-        console.log('polyline pref', pref);
         this.polyline = new google.maps.Polyline(pref);
 
         evtNames.forEach(function (e) {
