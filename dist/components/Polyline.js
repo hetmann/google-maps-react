@@ -130,15 +130,13 @@
         this.polylinePromise = wrappedPromise();
         this.renderPolyline();
       }
-
-      // issue when polyline drag => is creating a new instance / polyline  
-      // componentDidUpdate(prevProps) {
-      //   if ((this.props.map !== prevProps.map) ||
-      //     (this.props.position !== prevProps.position)) {
-      //       this.renderPolyline();
-      //   }
-      // }
-
+    }, {
+      key: 'componentDidUpdate',
+      value: function componentDidUpdate(prevProps) {
+        if (this.props.map !== prevProps.map || this.props.position !== prevProps.position) {
+          this.renderPolyline();
+        }
+      }
     }, {
       key: 'componentWillUnmount',
       value: function componentWillUnmount() {

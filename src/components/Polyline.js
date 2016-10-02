@@ -23,13 +23,12 @@ export class Polyline extends React.Component {
     this.renderPolyline();
   }
 
-  // issue when polyline drag => is creating a new instance / polyline  
-  // componentDidUpdate(prevProps) {
-  //   if ((this.props.map !== prevProps.map) ||
-  //     (this.props.position !== prevProps.position)) {
-  //       this.renderPolyline();
-  //   }
-  // }
+  componentDidUpdate(prevProps) {
+    if ((this.props.map !== prevProps.map) ||
+      (this.props.position !== prevProps.position)) {
+        this.renderPolyline();
+    }
+  }
 
   componentWillUnmount() {
     if (this.polyline) {
