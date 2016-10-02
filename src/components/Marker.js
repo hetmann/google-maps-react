@@ -52,7 +52,8 @@ export class Marker extends React.Component {
     const pref = {
       map: map,
       position: position,
-      icon: icon
+      icon: icon,
+      ...rest
     };
     this.marker = new google.maps.Marker(pref);
 
