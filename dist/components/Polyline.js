@@ -165,16 +165,15 @@
         }
 
         var pref = _extends({}, rest);
+        console.log('polyline pref', pref);
         this.polyline = new google.maps.Polyline(pref);
 
         evtNames.forEach(function (e) {
           _this2.polyline.addListener(e, _this2.handleEvent(e));
         });
 
-        if (map) {
-          this.polyline.setMap(map);
-        }
-
+        console.log('polyline this.polyline', this.polyline);
+        this.polyline.setMap(map);
         this.polylinePromise.resolve(this.polyline);
       }
     }, {

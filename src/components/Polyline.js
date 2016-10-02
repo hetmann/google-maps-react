@@ -47,16 +47,15 @@ export class Polyline extends React.Component {
     }
 
     const pref = {...rest};
+    console.log('polyline pref', pref);
     this.polyline = new google.maps.Polyline(pref);
 
     evtNames.forEach(e => {
       this.polyline.addListener(e, this.handleEvent(e));
     });
 
-    if (map) {
-      this.polyline.setMap(map);
-    }
-
+    console.log('polyline this.polyline', this.polyline);
+    this.polyline.setMap(map);
     this.polylinePromise.resolve(this.polyline);
   }
 
