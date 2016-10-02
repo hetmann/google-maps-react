@@ -287,6 +287,7 @@
         if (!children) return;
 
         return _react2.default.Children.map(children, function (c) {
+          if (!c) return null;
           return _react2.default.cloneElement(c, {
             map: _this6.map,
             google: _this6.props.google,
