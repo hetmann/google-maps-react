@@ -30,7 +30,7 @@ export class Polyline extends React.Component {
   //   }
   // }
 
-  componentWillReceiveProps(nextProps) {
+  componentWillUpdate(nextProps) {
     this.renderPolyline(); 
   }
 
