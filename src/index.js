@@ -24,14 +24,14 @@ const evtNames = ['ready', 'click', 'dragend', 'recenter'];
 export {wrapper as GoogleApiWrapper} from './GoogleApiComponent'
 export {Marker} from './components/Marker'
 export {Polyline} from './components/Polyline'
+export {Heatmap} from './components/Heatmap'
 export {InfoWindow} from './components/InfoWindow'
 
 export class Map extends React.Component {
     constructor(props) {
         super(props)
 
-        invariant(props.hasOwnProperty('google'),
-                    'You must include a `google` prop.');
+        invariant(props.hasOwnProperty('google'), 'You must include a `google` prop.');
 
         this.listeners = {}
         this.state = {
